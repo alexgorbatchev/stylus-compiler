@@ -1,7 +1,7 @@
 {
   "name": "stylus-compiler",
   "main": "./stylus-compiler.coffee",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "git@git.alexgorbatchev.com:alexgorbatchev/stylus-compiler.git"
@@ -10,10 +10,10 @@
     "test": "mocha test/*.spec.coffee"
   },
   "dependencies": {
-    "stylus": "~0.32.1",
     "eco": "~1.1.0-rc-3"
   },
   "devDependencies": {
+    "stylus": "~0.32.1",
     "lodash": "~1.2.1",
     "coffee-script": "~1.6.2",
     "chai": "~1.6.0",
