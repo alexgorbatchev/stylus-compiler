@@ -17,6 +17,14 @@ describe 'stylus-compiler', ->
         expect(css).to.equal 'body{font:12px Helvetica,Arial,sans-serif}\n'
         done()
 
+    it 'uses function context with eco templates', (done) ->
+      context = color : 'red'
+
+      stylus.fromSource.call context, "body\n  font 12px Helvetica, Arial, sans-serif\n  color <%= @color %>", "filename.styl", false, (err, css) ->
+        expect(err).to.be.falsy
+        expect(css).to.equal 'body{font:12px Helvetica,Arial,sans-serif;color:#f00}\n'
+        done()
+
   describe '.fromFile', ->
     it 'compiles with debug', (done) ->
       stylus.fromFile "#{__dirname}/fixture.styl", true, (err, css) ->
@@ -30,3 +38,10 @@ describe 'stylus-compiler', ->
         expect(css).to.equal 'body{font:12px Helvetica,Arial,sans-serif}\n'
         done()
 
+    it 'uses function context with eco templates', (done) ->
+      context = color : 'red'
+
+      stylus.fromFile.call context, "#{__dirname}/fixture-context.styl", false, (err, css) ->
+        expect(err).to.be.falsy
+        expect(css).to.equal 'body{font:12px Helvetica,Arial,sans-serif;color:#f00}\n'
+        done()
