@@ -1,19 +1,18 @@
 fs     = require 'fs'
 path   = require 'path'
 stylus = require 'stylus'
-eco    = require 'eco'
 
 module.exports = compiler =
-  fromSource : (src, filename, debug, callback) ->
-    src = eco.render src, @
-
-    opts =
-      compress : !debug
-      filename : filename
+  fromSource: (src, opts..., callback) ->
+    opts = opts[0] or {}
+    opts.filename ?= 'stylus-compiler'
 
     stylus.render src, opts, callback
 
-  fromFile : (filepath, debug, callback) ->
+  fromFile: (filepath, opts..., callback) ->
+    opts = opts[0] or {}
+    opts.filename ?= filepath
+
     fs.readFile filepath, 'utf8', (err, src) =>
       return callback err if err?
-      compiler.fromSource.apply @, [ src, filepath, debug, callback ]
+      compiler.fromSource src, opts, callback
