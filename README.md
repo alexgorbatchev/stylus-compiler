@@ -3,7 +3,10 @@
 A handy [Stylus](http://learnboost.github.io/stylus/) compiler from a series of compilers that have the same signature.
 
 [![Dependency status](https://david-dm.org/alexgorbatchev/stylus-compiler.png)](https://david-dm.org/alexgorbatchev/stylus-compiler)
-[![Build Status](https://travis-ci.org/alexgorbatchev/stylus-compiler.png)](https://travis-ci.org/alexgorbatchev/stylus-compiler)
+[![devDependency Status](https://david-dm.org/alexgorbatchev/stylus-compiler/dev-status.png)](https://david-dm.org/alexgorbatchev/stylus-compiler#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/alexgorbatchev/stylus-compiler.png?branch=master)](https://travis-ci.org/alexgorbatchev/stylus-compiler)
+
+[![NPM](https://nodei.co/npm/stylus-compiler.png?downloads=true)](https://npmjs.org/package/stylus-compiler)
 
 ## Support
 
